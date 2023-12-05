@@ -1,8 +1,158 @@
 /* You can add global styles to this file, and also import other style files */
 @import '~mdb-ui-kit/css/mdb.min.css';
 
+:root {
+
+  //colors
+  --brandPrimaryBlue: #1F79BB;
+  --brandDarkGray: #484A4B;
+  --brandBlue: #239BDB;
+  --brandRed: #C4261A;
+  --brandYellow: #FFED34;
+  --brandGreen: #249447;
+  --brandTan: #CFC096;
+  --brandRockGray: #989C97;
+  --brandTowerBeige: #9B9A6D;
+  --brandAngellHallAsh: #A79D96;
+  --blue: #0179a8;
+  --indigo: #2865dc;
+  --purple: #5f4b8b;
+  --pink: #b76ba3;
+  --red: #ea6759;
+  --orange: #ec935e;
+  --yellow: #f7c46c;
+  --green: #a7c796;
+  --teal: #00a28a;
+  --cyan: #3686a0;
+  --white: #fff;
+  --gray: #888c9b;
+  --gray-dark: #222230;
+  --primary: #2865dc;
+  --secondary: #f6f7f9;
+  --success: #00a28a;
+  --info: #0179a8;
+  --warning: #f7c46c;
+  --danger: #b76ba3;
+  --light: #f6f7f9;
+  --dark: #222230;
+  //Elogbook-colors
+  --elogbook-background: #1b3448;
+  --elogbook-primaryColor: #d4d9dd;
+  --elogbook-secondaryColor: #ffffff;
+  --elogbook-btnColor: #0f62fe;
+  //variable-inputs
+  --navbarHeight: 3rem;
+  --breadcrumbHeight: 3rem;
+  --settingsBreadcrumbHeight: 6rem;
+  --breadcrumbtitle: 1.2rem;
+  --miniSidebarWidth: 0;
+  --sidebarWidth: 14rem;
+  --appSidebarWidth: 14rem;
+  --filterWidth: 20rem;
+  --subSidebarWidth: 14rem;
+  --mainContentPadding: 0.5rem;
+  --font-family-base: "Roboto-Regular";
+  --font-family-monospace: monospace;
+  --primaryBtnColor: #0f62fe;
+  --secondaryBtnColor: #393939;
+  --primaryBtnHoverColor: #0353e9;
+  --secondaryBtnHoverColor: #4c4c4c;
+  --primaryBtnFocusColor: #0f62fe;
+  --secondaryBtnFocusColor: #0f62fe;
+  --nativeAppHeaderBG: #0956a4;
+  --pipelineRhombus: var(--c, #efefef) calc(49.5% - 1px), #999999 calc(49.5% - 1px), #999999 49.5%, transparent 50%;
+  --appSideBarItemHoverBG: #ffffff40;
+  --expSidebarWidth: 13.2rem;
+  --colSidebarWidth: 4.5rem;
+  --nativeAppHeaderColor: 'white';
+  --iframeOutletHeight: 100vh;
+  --iframeOutletWidth: 100vw;
+  --appBgColor: #dfe3e4;
+  --alarms-popover-width: 512px;
+  --tableWrapHeight: 0px;
+}
+
+$appBgColor : var(--appBgColor);
+$fontFamilyBase : var(--font-family-base);
+$fontFamilyMonospace : var(--font-family-monospace);
+$navbarHeight : var(--navbarHeight);
+
 
 .main-bar {
-    height: calc(100vh - 60px);
+  height: calc(100vh - 60px);
+  overflow-y: auto;
+}
+
+.left-side-bar {
+  box-shadow: 0px 1px 5px 0px #eaeaea;
+
+  ::-webkit-scrollbar {
+    width: 0px;
+    height: 0px;
+  }
+
+  position : fixed;
+  height : calc(100% - #{$navbarHeight});
+  background-color: #262626;
+  color : white;
+  z-index : 1030;
+  top : $navbarHeight;
+
+
+  ul {
+    list-style-type: none;
+  }
+
+  .menus-list {
+    padding-left: 0px;
+    padding-top: 16px;
     overflow-y: auto;
+    height: calc(100vh - var(--navbarHeight) - 36px);
+    border-bottom: 1px solid #5f4e4e;
+    padding-bottom: 0;
+    margin-bottom: 0;
+
+    li.active-item {
+      border-left: 5px solid #0F62FE;
+      background-color: #5C5C5C;
+    }
+
+    li:hover {
+      background-color: #5C5C5C;
+    }
+
+    li.active-item .side-menu-item {
+      padding-left: 15px;
+    }
+
+    .side-menu-item {
+      padding: 10px 8px;
+      cursor: pointer;
+      margin: auto;
+      padding-left: 20px;
+
+      .item-label {
+        padding-right: 10px;
+        margin-left: 8px;
+        font-size: 0.83rem;
+        text-overflow: ellipsis;
+        overflow-x: hidden;
+        white-space: nowrap;
+        width: 8.75rem;
+        max-width: 8.75rem;
+        display: inline-block;
+        position: relative;
+        top: 6px;
+
+      }
+    }
+  }
+}
+
+.app-header {
+  background-color: #171717;
+  color: white;
+  .top-bar {
+    height: var(--navbarHeight);
+  }
 }
