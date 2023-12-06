@@ -7,7 +7,9 @@
         <!-- <li (click)="onItemClick(eachItem,menusList)"  -->
           <li>
           <div class="side-menu-item" >
-            <img src="assets/images/sidebar-icons/{{eachItem.icon}}.svg" alt="" class="item-icon">
+            <span class="material-icons-outlined closeicon cursor-pointer invert">
+              close
+            </span>
             <span class="item-label" title="{{eachItem?.name}}">{{eachItem.name}}</span>
           </div>
         </li>
