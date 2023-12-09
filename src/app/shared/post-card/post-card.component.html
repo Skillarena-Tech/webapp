@@ -1,1 +1,17 @@
-<p>post-card works!</p>
+<ng-container style="height: 100%;">
+    <div class="card-infinte-scroll-body-catalog-app" infiniteScroll
+    [infiniteScrollDistance]="2" [infiniteScrollThrottle]="50" (scrolled)="onScrollList()"
+    [infiniteScrollContainer]="'.card-infinte-scroll-body-catalog-app'" [scrollWindow]="false"
+    [fromRoot]="true">
+    <div class="post-cards p-3" *ngFor="let eachcard of cardsList">
+        <div class="card" style="width: 18rem;">
+            <img src="..." class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">{{eachcard.name}}</h5>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+              <a href="#" class="btn btn-primary">Go somewhere</a>
+            </div>
+          </div>
+    </div>
+    </div>
+</ng-container>

@@ -1,5 +1,23 @@
 <header class="app-header">
-  <div class="top-bar">
-    <div>Ashu</div>
+  <div class="top-bar row d-flex m-0 p-0">
+    <div class="logo h-100 col-md-4">
+      <img class="logo-image d-flex justify-content-between" [src]="getLogoImg()" alt="logo">
+    </div>
+    <div class="nav-list">
+      <div class="search col">
+        <input type="text" placeholder="Type the text here" class="form-control"
+        [(ngModel)]="myData">
+      </div>
+      <div class="d-flex icons-list">
+        <div class="col p-1 nav-icons-list cursor-pointer" *ngFor="let eachIcons of iconsList">
+          <span class="material-icons-outlined" *ngIf="eachIcons?.action !== 'theme'" (click)="iconsClicked(eachIcons)">
+            {{eachIcons?.action === 'theme' ? eachIcons.icon[theme]: eachIcons.icon}}
+          </span>
+          <span class="material-icons-outlined" *ngIf="eachIcons?.action === 'theme'" (click)="iconsClicked(eachIcons)">
+            {{theme === 'dark_theme' ? eachIcons.icon['light_theme'] : eachIcons.icon['dark_theme']}}
+          </span>
+        </div>
+      </div>
+    </div>
   </div>
 </header>

@@ -1,13 +1,19 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'sa-side-bar',
   templateUrl: './side-bar.component.html',
   styleUrls: ['./side-bar.component.scss']
 })
-export class SideBarComponent implements OnInit {
+export class SideBarComponent implements OnInit, OnChanges {
+
+  @Input() hideSideBar: any = false;
   public menusList: any = [];
   public repload: any;
+
+  constructor() {
+  }
 
 
   ngOnInit() {
@@ -22,13 +28,13 @@ export class SideBarComponent implements OnInit {
         name: 'Community',
         key: 'community',
         route: '/community',
-        icon: 'community'
+        icon: 'groups'
       },
       {
         name: 'Jobs',
         key: 'jobd',
         route: '/jobs',
-        icon: 'job'
+        icon: 'work'
       },
       {
         name: 'Message',
@@ -39,4 +45,9 @@ export class SideBarComponent implements OnInit {
     ]
   }
 
+  ngOnChanges(changes: SimpleChanges): void {
+      if (changes && changes['hideSideBar']) {
+
+      }
+  }
 }

@@ -1,16 +1,13 @@
-<div class="left-side-bar overlay-menu-mobile">
+<div class="left-side-bar" [ngStyle]="{'width': hideSideBar ? '4rem' : '11rem'}">
     <ul class="menus-list">
-      <!-- <span class="item-label pl-2 cursor-pointer" style="position: absolute; top: 45%;"
-        [ngClass]="sidebarOpened ? 'l_25' : 'l_0'" title="Retry" *ngIf="sideOptions?.retry && !(menusList?.length)"
-        (click)="getMenusList()"><em class="mr-1 fa fa-repeat"></em>Retry</span> -->
       <ng-container *ngFor='let eachItem of menusList'>
         <!-- <li (click)="onItemClick(eachItem,menusList)"  -->
           <li>
-          <div class="side-menu-item" >
-            <span class="material-icons-outlined closeicon cursor-pointer invert">
-              close
+          <div class="side-menu-item">
+            <span class="material-icons-outlined cursor-pointer">
+              {{eachItem?.icon}}
             </span>
-            <span class="item-label" title="{{eachItem?.name}}">{{eachItem.name}}</span>
+            <span class="item-label" title="{{eachItem?.name}}" *ngIf="!hideSideBar">{{eachItem.name}}</span>
           </div>
         </li>
       </ng-container>
