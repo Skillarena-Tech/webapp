@@ -1,13 +1,15 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'ucp-landing',
+  selector: 'sa-landing',
   templateUrl: './landing.component.html',
   styleUrls: ['./landing.component.scss']
 })
 export class LandingComponent implements OnInit {
 
-  constructor() { }
+  constructor() { 
+    localStorage.setItem('theme', 'light_theme');
+  }
 
   ngOnInit(): void {
   }

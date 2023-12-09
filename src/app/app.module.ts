@@ -4,6 +4,8 @@ import { provideRouter } from '@angular/router';
 import { routes, AppRoutingModule } from './app-routing.module';
 
 import { AppComponent } from './app.component';
+import { FormsModule } from '@angular/forms';
+import { InfiniteScrollModule } from 'ngx-infinite-scroll';
 
 @NgModule({
   declarations: [
@@ -11,7 +13,9 @@ import { AppComponent } from './app.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    InfiniteScrollModule,
   ],
   providers: [provideRouter(routes)],
   bootstrap: [AppComponent]
