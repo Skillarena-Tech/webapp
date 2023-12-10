@@ -3,19 +3,26 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 @Component({
   selector: 'sa-post-card',
   templateUrl: './post-card.component.html',
-  styleUrls: ['./post-card.component.scss']
+
+  styleUrls: ['./post-card.component.scss'],
 })
 export class PostCardComponent {
   @Input() cardsList: any;
   @Output() scrollEmitter = new EventEmitter();
-  public cardScrolled: any= false;
+  public cardScrolled: any = false;
 
   onScrollList() {
     try {
       this.cardScrolled = true;
       this.scrollEmitter.emit(this.cardScrolled);
-    } catch(scrollErr) {
+    } catch (scrollErr) {
       console.error(scrollErr);
     }
   }
+
+  handleLike() {}
+
+  handleComment() {}
+  handleShare() {}
+  handleSave() {}
 }

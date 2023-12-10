@@ -8,7 +8,6 @@ import { FormsModule } from '@angular/forms';
 import { InfiniteScrollModule } from 'ngx-infinite-scroll';
 
 
-
 @NgModule({
   declarations: [
     NavBarComponent,
@@ -16,16 +15,12 @@ import { InfiniteScrollModule } from 'ngx-infinite-scroll';
     PostCardComponent,
     SideCardComponent,
   ],
-  imports: [
-    CommonModule,
-    FormsModule,
-    InfiniteScrollModule
-  ],
+  imports: [CommonModule, FormsModule, InfiniteScrollModule],
   exports: [
     NavBarComponent,
     SideBarComponent,
     PostCardComponent,
-    SideCardComponent
+    SideCardComponent,
   ],
 })
-export class SharedModule { }
+export class SharedModule {}

@@ -1,17 +1,113 @@
-<ng-container style="height: 100%;">
-    <div class="card-infinte-scroll-body-catalog-app" infiniteScroll
-    [infiniteScrollDistance]="2" [infiniteScrollThrottle]="50" (scrolled)="onScrollList()"
-    [infiniteScrollContainer]="'.card-infinte-scroll-body-catalog-app'" [scrollWindow]="false"
-    [fromRoot]="true">
-    <div class="post-cards p-3" *ngFor="let eachcard of cardsList">
-        <div class="card" style="width: 18rem;">
-            <img src="..." class="card-img-top" alt="...">
-            <div class="card-body">
-              <h5 class="card-title">{{eachcard.name}}</h5>
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-              <a href="#" class="btn btn-primary">Go somewhere</a>
+<ng-container style="height: 100%">
+  <div
+    class="card-infinte-scroll-body-catalog-app"
+    infiniteScroll
+    [infiniteScrollDistance]="2"
+    [infiniteScrollThrottle]="50"
+    (scrolled)="onScrollList()"
+    [infiniteScrollContainer]="'.card-infinte-scroll-body-catalog-app'"
+    [scrollWindow]="false"
+    [fromRoot]="true"
+  >
+    <div *ngFor="let eachcard of cardsList">
+      <div class="card mt-3">
+        <div class="card-body">
+          <div class="card-title">
+            <div class="row">
+              <div class="col-md-2">
+                <img
+                  [src]="eachcard.profile_image"
+                  class="rounded-circle"
+                  style="width: 54px"
+                  alt="Avatar"
+                />
+              </div>
+              <div
+                class="col-md-10 d-flex align-items-center justify-content-between"
+              >
+                <div class="d-flex align-items-center gap-2">
+                  <div class="fw-bold text-dark d-inline font-required fs-4">
+                    {{ eachcard.name }}
+                  </div>
+                  <div
+                    class="text-muted fs-6 fst-normal fw-light font-required d-inline"
+                  >
+                    {{ eachcard.id }}
+                  </div>
+                </div>
+                <div id="more_action">
+                  <span class="material-symbols-outlined green-color">
+                    more_vert
+                  </span>
+                </div>
+              </div>
             </div>
           </div>
+          <p class="description text-dark">
+            {{ eachcard.description }}
+          </p>
+          <div class="card-image">
+            <img
+              [src]="eachcard.image"
+              class="img-thumbnail"
+              style="width: 481px; height: 249px"
+            />
+          </div>
+          <div class="mt-3 mx-3 d-flex justify-content-between">
+            <div class="d-flex gap-3">
+              <div
+                id="likes"
+                class="green-color d-flex align-items-center gap-2 cursor-pointer"
+                (click)="handleLike()"
+              >
+                <span
+                  class="material-icons"
+                  *ngIf="eachcard.isLiked; else not_liked"
+                >
+                  thumb_up
+                </span>
+                <ng-template #not_liked>
+                  <span class="material-icons-outlined"> thumb_up </span>
+                </ng-template>
+
+                <span id="likes_count" class="text-dark">{{
+                  eachcard.like_no
+                }}</span>
+              </div>
+
+              <div
+                id="comments"
+                class="green-color d-flex align-items-center gap-2"
+              >
+                <span class="material-icons-outlined"> chat </span>
+                <span id="comments_count" class="text-dark">{{
+                  eachcard.comment_no
+                }}</span>
+              </div>
+
+              <div
+                id="shares"
+                class="green-color d-flex align-items-center gap-2"
+              >
+                <span class="material-icons-outlined"> share </span>
+                <span id="shares_count" class="text-dark">{{
+                  eachcard.share_no
+                }}</span>
+              </div>
+            </div>
+            <div class="green-color">
+              <span
+                class="material-icons-outlined"
+                *ngIf="eachcard.isSaved; else not_saved"
+                >bookmark
+              </span>
+              <ng-template #not_saved>
+                <span class="material-icons-outlined"> bookmark_border </span>
+              </ng-template>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-    </div>
+  </div>
 </ng-container>

@@ -1,20 +1,21 @@
 /* You can add global styles to this file, and also import other style files */
-@import '~mdb-ui-kit/css/mdb.min.css';
-@import 'material-icons/iconfont/material-icons.css';
+@import "~mdb-ui-kit/css/mdb.min.css";
+@import "material-icons/iconfont/material-icons.css";
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@600&family=Source+Sans+3:wght@500;600&display=swap");  
+@import "material-symbols";
 
 :root {
-
   //colors
-  --brandPrimaryBlue: #1F79BB;
-  --brandDarkGray: #484A4B;
-  --brandBlue: #239BDB;
-  --brandRed: #C4261A;
-  --brandYellow: #FFED34;
+  --brandPrimaryBlue: #1f79bb;
+  --brandDarkGray: #484a4b;
+  --brandBlue: #239bdb;
+  --brandRed: #c4261a;
+  --brandYellow: #ffed34;
   --brandGreen: #249447;
-  --brandTan: #CFC096;
-  --brandRockGray: #989C97;
-  --brandTowerBeige: #9B9A6D;
-  --brandAngellHallAsh: #A79D96;
+  --brandTan: #cfc096;
+  --brandRockGray: #989c97;
+  --brandTowerBeige: #9b9a6d;
+  --brandAngellHallAsh: #a79d96;
   --blue: #0179a8;
   --indigo: #2865dc;
   --purple: #5f4b8b;
@@ -61,11 +62,12 @@
   --primaryBtnFocusColor: #0f62fe;
   --secondaryBtnFocusColor: #0f62fe;
   --nativeAppHeaderBG: #0956a4;
-  --pipelineRhombus: var(--c, #efefef) calc(49.5% - 1px), #999999 calc(49.5% - 1px), #999999 49.5%, transparent 50%;
+  --pipelineRhombus: var(--c, #efefef) calc(49.5% - 1px),
+    #999999 calc(49.5% - 1px), #999999 49.5%, transparent 50%;
   --appSideBarItemHoverBG: #ffffff40;
   --expSidebarWidth: 13.2rem;
   --colSidebarWidth: 4.5rem;
-  --nativeAppHeaderColor: 'white';
+  --nativeAppHeaderColor: "white";
   --iframeOutletHeight: 100vh;
   --iframeOutletWidth: 100vw;
   --appBgColor: #dfe3e4;
@@ -73,11 +75,10 @@
   --tableWrapHeight: 0px;
 }
 
-$appBgColor : var(--appBgColor);
-$fontFamilyBase : var(--font-family-base);
-$fontFamilyMonospace : var(--font-family-monospace);
-$navbarHeight : var(--navbarHeight);
-
+$appBgColor: var(--appBgColor);
+$fontFamilyBase: var(--font-family-base);
+$fontFamilyMonospace: var(--font-family-monospace);
+$navbarHeight: var(--navbarHeight);
 
 .whole-page.dark_theme {
   .left-side-bar {
@@ -88,14 +89,12 @@ $navbarHeight : var(--navbarHeight);
       height: 0px;
     }
 
-    position : fixed;
-    height : calc(100% - #{$navbarHeight});
-    background-color: #1B1F23;
-    ;
-    color : #FFFFFF;
-    z-index : 1030;
-    top : $navbarHeight;
-
+    position: fixed;
+    height: calc(100% - #{$navbarHeight});
+    background-color: #1b1f23;
+    color: #ffffff;
+    z-index: 1030;
+    top: $navbarHeight;
 
     ul {
       list-style-type: none;
@@ -110,12 +109,12 @@ $navbarHeight : var(--navbarHeight);
       margin-bottom: 0;
 
       li.active-item {
-        border-left: 5px solid #0F62FE;
-        background-color: #5C5C5C;
+        border-left: 5px solid #0f62fe;
+        background-color: #5c5c5c;
       }
 
       li:hover {
-        background-color: #5C5C5C;
+        background-color: #5c5c5c;
       }
 
       li.active-item .side-menu-item {
@@ -140,17 +139,16 @@ $navbarHeight : var(--navbarHeight);
           max-width: 7.2rem;
           display: inline-block;
           position: relative;
-
         }
       }
     }
   }
 
   .app-header {
-    background-color: #1B1F23;
+    background-color: #1b1f23;
     z-index: 1030;
-    color: #FFFFFF;
-    box-shadow: 0 3px 3px -2px #0003,0 3px 4px #00000024,0 1px 8px #0000001f !important;
+    color: #ffffff;
+    box-shadow: 0 3px 3px -2px #0003, 0 3px 4px #00000024, 0 1px 8px #0000001f !important;
 
     .top-bar {
       height: var(--navbarHeight);
@@ -173,7 +171,7 @@ $navbarHeight : var(--navbarHeight);
           flex-basis: 0;
           flex-grow: 1;
           max-width: 400px !important;
-        };
+        }
         .nav-icons-list {
           margin-left: auto;
           display: flex;
@@ -204,13 +202,12 @@ $navbarHeight : var(--navbarHeight);
       height: 0px;
     }
 
-    position : fixed;
-    height : calc(100% - #{$navbarHeight});
-    background-color: #FCFCFF;
-    color : #171717;
-    z-index : 1030;
-    top : $navbarHeight;
-
+    position: fixed;
+    height: calc(100% - #{$navbarHeight});
+    background-color: #fcfcff;
+    color: #171717;
+    z-index: 1030;
+    top: $navbarHeight;
 
     ul {
       list-style-type: none;
@@ -225,7 +222,7 @@ $navbarHeight : var(--navbarHeight);
       margin-bottom: 0;
 
       li.active-item {
-        border-left: 5px solid #0F62FE;
+        border-left: 5px solid #0f62fe;
         background-color: #e1dada;
       }
 
@@ -255,7 +252,6 @@ $navbarHeight : var(--navbarHeight);
           max-width: 7.2rem;
           display: inline-block;
           position: relative;
-
         }
       }
     }
@@ -264,10 +260,10 @@ $navbarHeight : var(--navbarHeight);
   .app-header {
     position: relative;
     z-index: 1030;
-    background-color: #FCFCFF;
-    color: #1B1F23;
-    box-shadow: 0 3px 3px -2px #0003,0 3px 4px #00000024,0 1px 8px #0000001f!important;
-    
+    background-color: #fcfcff;
+    color: #1b1f23;
+    box-shadow: 0 3px 3px -2px #0003, 0 3px 4px #00000024, 0 1px 8px #0000001f !important;
+
     .top-bar {
       height: var(--navbarHeight);
       width: 100%;
@@ -289,7 +285,7 @@ $navbarHeight : var(--navbarHeight);
           flex-basis: 0;
           flex-grow: 1;
           max-width: 400px !important;
-        };
+        }
         .nav-icons-list {
           margin-left: auto;
           display: flex;
@@ -300,15 +296,14 @@ $navbarHeight : var(--navbarHeight);
     }
   }
   .main-playground {
-    background-color: #F2EEEE;
+    background-color: #f2eeee;
     height: calc(100vh - var(--navbarHeight));
   }
   input {
-    background-color: #BBBBBB;
+    background-color: #bbbbbb;
     border: none;
   }
 }
-
 
 .logo-image {
   width: 167px;
