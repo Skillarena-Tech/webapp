@@ -221,14 +221,14 @@ $navbarHeight: var(--navbarHeight);
       padding-bottom: 0;
       margin-bottom: 0;
 
-      li.active-item {
-        border-left: 5px solid #0f62fe;
-        background-color: #e1dada;
-      }
+    li.active-item {
+      border-left: 5px solid #0F62FE;
+      background-color: #5C5C5C;
+    }
 
-      li:hover {
-        background-color: #e1dada;
-      }
+    li:hover {
+      background-color: #5C5C5C;
+    }
 
       li.active-item .side-menu-item {
         padding-left: 15px;
