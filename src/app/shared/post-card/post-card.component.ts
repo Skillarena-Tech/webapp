@@ -25,4 +25,5 @@ export class PostCardComponent {
   handleComment() {}
   handleShare() {}
   handleSave() {}
+  
 }
