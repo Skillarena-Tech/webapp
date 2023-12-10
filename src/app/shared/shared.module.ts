@@ -6,7 +6,10 @@ import { PostCardComponent } from './post-card/post-card.component';
 import { SideCardComponent } from './side-card/side-card.component';
 import { FormsModule } from '@angular/forms';
 import { InfiniteScrollModule } from 'ngx-infinite-scroll';
+<<<<<<< HEAD
 
+=======
+>>>>>>> origin/develop
 
 
 @NgModule({
@@ -15,17 +18,21 @@ import { InfiniteScrollModule } from 'ngx-infinite-scroll';
     SideBarComponent,
     PostCardComponent,
     SideCardComponent,
+<<<<<<< HEAD
   ],
   imports: [
     CommonModule,
     FormsModule,
     InfiniteScrollModule
+=======
+>>>>>>> origin/develop
   ],
+  imports: [CommonModule, FormsModule, InfiniteScrollModule],
   exports: [
     NavBarComponent,
     SideBarComponent,
     PostCardComponent,
-    SideCardComponent
+    SideCardComponent,
   ],
 })
-export class SharedModule { }
+export class SharedModule {}
