@@ -1,4 +1,11 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import {
+  Component,
+  EventEmitter,
+  Input,
+  OnInit,
+  Output,
+  SimpleChanges,
+} from '@angular/core';
 
 @Component({
   selector: 'sa-post-card',
@@ -10,6 +17,7 @@ export class PostCardComponent {
   @Input() cardsList: any;
   @Output() scrollEmitter = new EventEmitter();
   public cardScrolled: any = false;
+  public isLightTheme: Boolean = false;
 
   onScrollList() {
     try {
@@ -25,5 +33,4 @@ export class PostCardComponent {
   handleComment() {}
   handleShare() {}
   handleSave() {}
-  
 }

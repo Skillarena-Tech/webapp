@@ -1,1 +1,43 @@
-<p>side-card works!</p>
+<div class="card mt-3 shadow" [ngClass]="{ 'bg-black-color': !isLightTheme }">
+  <div class="card-body">
+    <h3 class="card-title element-font-family">
+      <ng-template [ngIf]="menuList.id == 'trendingList'">Trending</ng-template>
+      <ng-template [ngIf]="menuList.id == 'followList'"
+        >Who to Follow</ng-template
+      >
+    </h3>
+    <div class="ms-3" *ngFor="let listItem of menuList.list">
+      <ng-template [ngIf]="menuList.id == 'trendingList'">
+        <div class="d-flex align-items-center justify-content-between">
+          <div class="fs-6 my-2 element-font-family">{{ listItem.name }}</div>
+          <div>
+            <span class="material-symbols-outlined"> open_in_new </span>
+          </div>
+        </div>
+      </ng-template>
+      <ng-template [ngIf]="menuList.id == 'followList'">
+        <div class="d-flex justify-content-between my-2">
+          <div class="d-flex align-items-center gap-3 p-2">
+            <div>
+              <img
+                [src]="listItem.profile_photo"
+                style="width: 30px"
+                class="rounded-circle"
+                alt=""
+              />
+            </div>
+            <div>
+              <div class="element-font-family">{{ listItem.name }}</div>
+              <div class="text-muted" style="font-size: xx-small">
+                @{{ listItem.profile_id }}
+              </div>
+            </div>
+          </div>
+          <div>
+            <button class="btn btn-success">Follow</button>
+          </div>
+        </div>
+      </ng-template>
+    </div>
+  </div>
+</div>

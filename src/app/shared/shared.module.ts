@@ -6,7 +6,11 @@ import { PostCardComponent } from './post-card/post-card.component';
 import { SideCardComponent } from './side-card/side-card.component';
 import { FormsModule } from '@angular/forms';
 import { InfiniteScrollModule } from 'ngx-infinite-scroll';
-
+import {
+  NgbModule,
+  NgbDropdownModule,
+  NgbPopoverModule,
+} from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -15,7 +19,14 @@ import { InfiniteScrollModule } from 'ngx-infinite-scroll';
     PostCardComponent,
     SideCardComponent,
   ],
-  imports: [CommonModule, FormsModule, InfiniteScrollModule],
+  imports: [
+    CommonModule,
+    FormsModule,
+    InfiniteScrollModule,
+    NgbModule,
+    NgbDropdownModule,
+    NgbPopoverModule,
+  ],
   exports: [
     NavBarComponent,
     SideBarComponent,
@@ -23,4 +34,6 @@ import { InfiniteScrollModule } from 'ngx-infinite-scroll';
     SideCardComponent,
   ],
 })
-export class SharedModule {}
+export class SharedModule {
+  
+}

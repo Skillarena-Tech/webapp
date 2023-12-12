@@ -2,7 +2,7 @@
   font-family: "Montserrat";
 }
 .description {
-  font-size: 13px;
+  font-size: 1vw;
   color: black;
   font-style: normal;
   font-family: "Source Sans 3";
@@ -11,4 +11,37 @@
 
 .green-color {
   color: #00a884;
+}
+.bg-black-color {
+  background: #212734;
+
+  color: white;
+}
+
+.posts-container {
+  height: 90vh;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+.posts-container::-webkit-scrollbar {
+  width: 10px;
+  margin-top: 10px;
+}
+
+/* Track */
+.posts-container::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 20px;
+}
+
+/* Handle */
+.posts-container::-webkit-scrollbar-thumb {
+  background: #acaaaa;
+  border-radius: 20px;
+}
+
+/* Handle on hover */
+.posts-container::-webkit-scrollbar-thumb:hover {
+  background: #6e6e6e;
 }
