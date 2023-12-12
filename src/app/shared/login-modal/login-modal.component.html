@@ -1,0 +1,31 @@
+<button class="btn btn-sm btn-success ms-3" (click)="open(loginModal)">
+  Login
+</button>
+
+<ng-template #loginModal let-modal>
+  <div
+    class="d-flex modalContainer flex-column w-100 modal-content"
+    
+  >
+    <div class="d-flex justify-content-between align-items-center mx-3">
+      <img
+        src="assets/images/dark-theme-logo.png"
+        class="mx-auto"
+        height="80px"
+      />
+      <button
+        type="button"
+        class="btn-close"
+        aria-label="Close"
+        (click)="modal.dismiss()"
+      ></button>
+    </div>
+    <sa-login-form
+      [showSignUpForm]="showSignUpForm"
+      *ngIf="!signUpForm; else signUp"
+    ></sa-login-form>
+    <ng-template #signUp>
+      <sa-sign-up-form [showLoginForm]="showLoginForm"></sa-sign-up-form>
+    </ng-template>
+  </div>
+</ng-template>

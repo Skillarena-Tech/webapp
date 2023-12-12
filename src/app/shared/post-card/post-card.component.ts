@@ -17,7 +17,7 @@ export class PostCardComponent {
   @Input() cardsList: any;
   @Output() scrollEmitter = new EventEmitter();
   public cardScrolled: any = false;
-  public isLightTheme: Boolean = false;
+  public isLightTheme: Boolean = true;
 
   onScrollList() {
     try {

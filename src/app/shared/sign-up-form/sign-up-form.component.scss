@@ -1,0 +1,12 @@
+.control {
+  border: none;
+  outline: none;
+  border-bottom: 3px solid black;
+  color: black;
+  width: 82%;
+}
+
+.control::placeholder {
+  color: black;
+  font-weight: normal;
+}

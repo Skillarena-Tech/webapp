@@ -10,7 +10,7 @@ export class SideCardComponent implements OnInit {
   private modalService = inject(NgbModal);
   closeResult = '';
   @Input() menuList: any = [];
-  isLightTheme: Boolean = false;
+  isLightTheme: Boolean = true;
 
   ngOnInit(): void {}
 

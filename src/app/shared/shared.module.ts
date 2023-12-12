@@ -4,13 +4,12 @@ import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { SideBarComponent } from './side-bar/side-bar.component';
 import { PostCardComponent } from './post-card/post-card.component';
 import { SideCardComponent } from './side-card/side-card.component';
-import { FormsModule } from '@angular/forms';
+import { FormControl, FormsModule } from '@angular/forms';
 import { InfiniteScrollModule } from 'ngx-infinite-scroll';
-import {
-  NgbModule,
-  NgbDropdownModule,
-  NgbPopoverModule,
-} from '@ng-bootstrap/ng-bootstrap';
+import { NgbModule, NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { LoginModalComponent } from './login-modal/login-modal.component';
+import { LoginFormComponent } from './login-form/login-form.component';
+import { SignUpFormComponent } from './sign-up-form/sign-up-form.component';
 
 @NgModule({
   declarations: [
@@ -18,15 +17,11 @@ import {
     SideBarComponent,
     PostCardComponent,
     SideCardComponent,
+    LoginModalComponent,
+    LoginFormComponent,
+    SignUpFormComponent,
   ],
-  imports: [
-    CommonModule,
-    FormsModule,
-    InfiniteScrollModule,
-    NgbModule,
-    NgbDropdownModule,
-    NgbPopoverModule,
-  ],
+  imports: [CommonModule, FormsModule, InfiniteScrollModule, NgbModule],
   exports: [
     NavBarComponent,
     SideBarComponent,
@@ -35,5 +30,5 @@ import {
   ],
 })
 export class SharedModule {
-  
+  hello: string = 'Hello worlds';
 }

@@ -3,39 +3,39 @@ import { Component, Input, OnInit } from '@angular/core';
 @Component({
   selector: 'sa-nav-bar',
   templateUrl: './nav-bar.component.html',
-  styleUrls: ['./nav-bar.component.scss']
+  styleUrls: ['./nav-bar.component.scss'],
 })
 export class NavBarComponent implements OnInit {
-
   public theme: any;
   public myData: any;
-  public iconsList: any= [];
-
-  constructor() {
-    
-  }
+  public iconsList: any = [];
+  public loginModalOpen: Boolean = false;
+  constructor() {}
 
   ngOnInit() {
     this.iconsList = [
-      { name: 'Message',
+      {
+        name: 'Message',
         action: 'message',
         icon: 'message',
-        tooltip: 'Message to connection'
+        tooltip: 'Message to connection',
       },
-      { name: 'Notification',
+      {
+        name: 'Notification',
         action: 'notification',
         icon: 'notifications',
-        tooltip: 'Notification'
+        tooltip: 'Notification',
       },
-      { name: 'Theme',
+      {
+        name: 'Theme',
         action: 'theme',
         icon: {
           light_theme: 'dark_mode',
-          dark_theme: 'light_mode'
+          dark_theme: 'light_mode',
         },
-        tooltip: 'Theme'
-      }
-    ]
+        tooltip: 'Theme',
+      },
+    ];
   }
 
   setTheme() {
@@ -46,10 +46,10 @@ export class NavBarComponent implements OnInit {
       } else {
         localStorage.setItem('theme', 'light_theme');
       }
-      window.dispatchEvent(new Event("storage"));
+      window.dispatchEvent(new Event('storage'));
       this.getLogoImg();
-    } catch(error) {
-      console.error(error)
+    } catch (error) {
+      console.error(error);
     }
   }
 
@@ -58,7 +58,7 @@ export class NavBarComponent implements OnInit {
       if (selectedIcon.action === 'theme') {
         this.setTheme();
       }
-    } catch(iconsErr) {
+    } catch (iconsErr) {
       console.error(iconsErr);
     }
   }
@@ -71,7 +71,7 @@ export class NavBarComponent implements OnInit {
         return 'assets/images/dark-theme-logo.png';
       }
     } catch (logoErr) {
-      console.error(logoErr)
+      console.error(logoErr);
       return;
     }
   }
