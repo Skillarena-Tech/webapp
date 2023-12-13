@@ -1,5 +1,4 @@
 <div class="main-playground">
-  <sa-side-bar [hideSideBar]="hideSideBar"></sa-side-bar>
   <div
     class="home-content d-flex gap-5"
     [ngStyle]="{
@@ -10,11 +9,13 @@
     <div class="col-3" style="background-color: aqua" *ngIf="hideSideBar">
       <sa-side-card></sa-side-card>
     </div>
-    <div class="col-5" >
-      <sa-post-card
-        [cardsList]="cardsList"
-        (scrollEmitter)="postScrollEvent($event)"
-      ></sa-post-card>
+    <div class="col-5 post-card-play-area" >
+      <div *ngFor="let eachCard of cardsList">
+        <sa-post-card
+          [cardsList]="eachCard"
+          (scrollEmitter)="postScrollEvent($event)"
+        ></sa-post-card>
+      </div>
     </div>
     <div class="col-4" >
       <sa-side-card [menuList]="trendingTopicList"></sa-side-card>

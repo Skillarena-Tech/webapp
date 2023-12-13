@@ -28,7 +28,6 @@
     "material-icons": "^1.13.12",
     "material-symbols": "^0.14.2",
     "mdb-ui-kit": "^7.0.0",
-    "ngx-infinite-scroll": "^17.0.0",
     "ngx-toastr": "^17.0.2",
     "rxjs": "~7.5.0",
     "rxjs-compat": "^6.6.7",

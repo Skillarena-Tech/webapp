@@ -1,5 +1,5 @@
 import { Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'sa-side-bar',
@@ -12,7 +12,7 @@ export class SideBarComponent implements OnInit, OnChanges {
   public menusList: any = [];
   public repload: any;
 
-  constructor() {
+  constructor(public router: Router) {
   }
 
 
@@ -21,25 +21,25 @@ export class SideBarComponent implements OnInit, OnChanges {
       {
         name: 'Home',
         key: 'home',
-        route: '/home',
+        route: 'app/feed',
         icon: 'home'
       },
       {
         name: 'Community',
         key: 'community',
-        route: '/community',
+        route: 'app/community',
         icon: 'groups'
       },
       {
         name: 'Jobs',
         key: 'jobd',
-        route: '/jobs',
+        route: 'app/jobs',
         icon: 'work'
       },
       {
         name: 'Message',
         key: 'message',
-        route: '/message',
+        route: 'app/message',
         icon: 'message'
       }
     ]
@@ -49,5 +49,17 @@ export class SideBarComponent implements OnInit, OnChanges {
       if (changes && changes['hideSideBar']) {
 
       }
+  }
+
+  onItemClick(eachItem: any) {
+    if (eachItem.route) {
+      this.router.navigate([eachItem.route], eachItem.queryParams ? { queryParams: eachItem.queryParams } : undefined);
+      // if (window.innerWidth > 992) {
+      //   sideMenu[0].setAttribute('style', 'display:block;');
+      // } else {
+      //   sideMenu[0].setAttribute('style', 'display:none;');
+      // }
+      return;
+    }
   }
 }

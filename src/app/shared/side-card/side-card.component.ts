@@ -1,5 +1,6 @@
 import { Component, Input, TemplateRef, inject, OnInit } from '@angular/core';
 import { NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
+import { LocalStorageService } from '../../services/localstorage.service';
 
 @Component({
   selector: 'sa-side-card',
@@ -10,7 +11,13 @@ export class SideCardComponent implements OnInit {
   private modalService = inject(NgbModal);
   closeResult = '';
   @Input() menuList: any = [];
-  isLightTheme: Boolean = true;
+  public theme: any;
+
+  constructor(private localStorageService: LocalStorageService) {
+    this.localStorageService.getLocalStorageChanges().subscribe((value) => {
+      this.theme = value;
+      });
+  }
 
   ngOnInit(): void {}
 

@@ -1,0 +1,14 @@
+
+<div #mapContainer id="main-map-container" style="height: 100%"></div>
+<div id="mapTypeOptions" class="map-type-options d-flex map-options" *ngIf="mapOptions?.activeMapType">
+    <div class="mapTypeModal">
+        <ng-container *ngFor="let eachType of mapTypes">
+            <div class="m-0 p-0 maptypes cursor-pointer" *ngIf="mapOptions?.activeMapType !== eachType?.id"
+                (click)="changeMapType(eachType?.id)">
+                <img src="{{eachType?.svg}}" alt="" title="{{eachType.tooltip || ''}}">
+            </div>
+        </ng-container>
+    </div>
+</div>
+
+<p class="title-text" *ngIf="title">{{title}}</p>

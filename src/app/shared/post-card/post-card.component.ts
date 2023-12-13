@@ -2,10 +2,12 @@ import {
   Component,
   EventEmitter,
   Input,
+  OnChanges,
   OnInit,
   Output,
   SimpleChanges,
 } from '@angular/core';
+import { LocalStorageService } from '../../services/localstorage.service';
 
 @Component({
   selector: 'sa-post-card',
@@ -13,11 +15,26 @@ import {
 
   styleUrls: ['./post-card.component.scss'],
 })
-export class PostCardComponent {
+export class PostCardComponent implements OnChanges {
   @Input() cardsList: any;
   @Output() scrollEmitter = new EventEmitter();
   public cardScrolled: any = false;
-  public isLightTheme: Boolean = true;
+  public theme: any;
+
+  constructor(private localStorageService: LocalStorageService) {
+    this.localStorageService.getLocalStorageChanges().subscribe((value) => {
+      this.theme = value;
+      });
+  }
+
+  ngOnChanges(changes: SimpleChanges): void {
+    
+  }
+
+  getThemeData() {
+
+  }
+  
 
   onScrollList() {
     try {
