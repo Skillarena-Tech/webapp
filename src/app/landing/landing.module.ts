@@ -6,13 +6,17 @@ import { AppsComponent } from './apps/apps.component';
 import { SharedModule } from './../shared/shared.module'
 import { HomeComponent } from './home/home.component'
 import { FormsModule } from '@angular/forms';
+import { JobsComponent } from './jobs/jobs.component';
+import { CommunityComponent } from './community/community.component';
 
 
 @NgModule({
   declarations: [
     LandingComponent,
     AppsComponent,
-    HomeComponent
+    HomeComponent,
+    JobsComponent,
+    CommunityComponent
   ],
   imports: [
     CommonModule,

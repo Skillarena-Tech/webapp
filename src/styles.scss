@@ -73,6 +73,8 @@
   --appBgColor: #dfe3e4;
   --alarms-popover-width: 512px;
   --tableWrapHeight: 0px;
+  --sidebarActiveBgColor : linear-gradient(110.18deg, #00FE67 -12.46%, #00FE67 -12.46%, #54AC5A -12.44%, #00A884 170.83%);
+
 }
 
 $appBgColor: var(--appBgColor);
@@ -109,12 +111,13 @@ $navbarHeight: var(--navbarHeight);
       margin-bottom: 0;
 
       li.active-item {
-        border-left: 5px solid #0f62fe;
-        background-color: #5c5c5c;
+        background: var(--sidebarActiveBgColor);
+        font-weight: bold;
       }
 
       li:hover {
-        background-color: #5c5c5c;
+        background-color: #94deb2;
+        color: #000000;
       }
 
       li.active-item .side-menu-item {
@@ -185,6 +188,7 @@ $navbarHeight: var(--navbarHeight);
   .main-playground {
     background-color: #000000;
     height: calc(100vh - var(--navbarHeight));
+    overflow-y: auto;
   }
 
   input {
@@ -222,12 +226,12 @@ $navbarHeight: var(--navbarHeight);
       margin-bottom: 0;
 
       li.active-item {
-        border-left: 5px solid #0f62fe;
-        background-color: #5c5c5c;
+        background: var(--sidebarActiveBgColor);
+        font-weight: bold;
       }
 
       li:hover {
-        background-color: #5c5c5c;
+        background-color: #94deb2;
       }
 
       li.active-item .side-menu-item {
@@ -298,6 +302,7 @@ $navbarHeight: var(--navbarHeight);
   .main-playground {
     background-color: #f2eeee;
     height: calc(100vh - var(--navbarHeight));
+    overflow-y: auto;
   }
   input {
     background-color: #bbbbbb;
@@ -319,4 +324,32 @@ $navbarHeight: var(--navbarHeight);
 .text-black{
   color: black;
 }
+
+.post-card-play-area {
+  height: calc(100vh - var(--navbarHeight));
+}
+
+
+::-webkit-scrollbar {
+  width: 10px;
+  margin-top: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 20px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #acaaaa;
+  border-radius: 20px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #6e6e6e;
+}
+
 
