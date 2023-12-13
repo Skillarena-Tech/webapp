@@ -1,14 +1,24 @@
 <div class="main-playground">
-    <sa-side-bar [hideSideBar]="hideSideBar"></sa-side-bar>
-    <div class="home-content d-flex" [ngStyle]="{'margin-left': hideSideBar ? '4rem' : '11rem', 'padding-left': !hideSideBar ? '10rem' : ''}">
-        <div class="col-3" style="background-color: aqua;" *ngIf="hideSideBar">
-            <sa-side-card></sa-side-card>
-        </div>
-        <div class="col-6" style="background-color: blue;">
-            <sa-post-card [cardsList]="cardsList" (scrollEmitter)="postScrollEvent($event)"></sa-post-card>
-        </div>
-        <div class="col-3" style="background-color: blueviolet;">
-            <sa-side-card></sa-side-card>
-        </div>
+  <sa-side-bar [hideSideBar]="hideSideBar"></sa-side-bar>
+  <div
+    class="home-content d-flex gap-5"
+    [ngStyle]="{
+      'margin-left': hideSideBar ? '4rem' : '11rem',
+      'padding-left': !hideSideBar ? '10rem' : ''
+    }"
+  >
+    <div class="col-3" style="background-color: aqua" *ngIf="hideSideBar">
+      <sa-side-card></sa-side-card>
     </div>
+    <div class="col-5" >
+      <sa-post-card
+        [cardsList]="cardsList"
+        (scrollEmitter)="postScrollEvent($event)"
+      ></sa-post-card>
+    </div>
+    <div class="col-4" >
+      <sa-side-card [menuList]="trendingTopicList"></sa-side-card>
+      <sa-side-card [menuList]="followList"></sa-side-card>
+    </div>
+  </div>
 </div>

@@ -1,0 +1,88 @@
+<div class="text-center element-font-family text-black mt-4 fs-2">
+  Welcome back!
+</div>
+<div class="text-center element-font-family text-black mt-2 fs-6">
+  please enter your details
+</div>
+<div class="d-flex flex-column justify-content-center mt-3">
+  <div id="username" class="d-flex justify-content-center my-4">
+    <input
+      class="control w-75 element-font-family"
+      placeholder="Username / Email / Mobile No."
+      style="color: black"
+    />
+  </div>
+  <div id="password" class="d-flex justify-content-center">
+    <input
+      class="control w-75 element-font-family"
+      placeholder="Password"
+      style="color: black"
+      type="password"
+    />
+    <span
+      class="material-icons-outlined cursor-pointer"
+      style="position: absolute; right: 70px"
+      (click)="passwordVisible()"
+    >
+      {{ passwordVisibility ? "visibility" : "visibility_off" }}
+    </span>
+  </div>
+</div>
+<div
+  style="font-size: small"
+  class="d-flex justify-content-between align-items-center px-5 mt-5"
+>
+  <div class="d-flex justify-content-center gap-3">
+    <div class="checkbox-wrapper-19">
+      <input type="checkbox" id="cbtest-19" />
+      <label for="cbtest-19" class="check-box"></label>
+    </div>
+    <div>Remember me</div>
+  </div>
+  <a href="#">Forgot Password ?</a>
+</div>
+<div class="mt-4 d-flex justify-content-center">
+  <button
+    class="element-font-family btn btn-success w-75"
+    style="border-radius: 40px"
+  >
+    Log In
+  </button>
+</div>
+<div class="d-flex justify-content-center align-items-center w-100 mt-2">
+  <hr class="w-25" />
+  <div class="mx-2 fw-bold">OR</div>
+  <hr class="w-25" />
+</div>
+<div class="d-flex justify-content-between mx-5">
+  <button
+    class="btn btn-light d-flex justify-content-center align-items-center gap-1"
+    style="border-radius: 40px"
+  >
+    <img
+      style="width: 12px"
+      class="rounded-image"
+      src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/Google_%22G%22_logo.svg/1200px-Google_%22G%22_logo.svg.png"
+      alt=""
+    />
+    Login in with google
+  </button>
+  <button
+    class="btn btn-light d-flex justify-content-center align-items-center gap-1"
+    style="border-radius: 40px"
+  >
+    <img
+      style="width: 12px"
+      class="rounded-image"
+      src="https://cdn1.iconfinder.com/data/icons/logotypes/32/circle-linkedin-512.png"
+      alt=""
+    />
+    Login in with LinkedIn
+  </button>
+</div>
+<div class="mt-3 mb-2 d-flex justify-content-center">
+  Don't have an account?
+  <span class="mx-2 fw-bold cursor-pointer" (click)="showSignUpForm()"
+    >Sign Up</span
+  >
+</div>

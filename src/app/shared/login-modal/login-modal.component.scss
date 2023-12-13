@@ -1,0 +1,27 @@
+.modalContainer {
+  height: 90vh;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+.modalContainer::-webkit-scrollbar {
+  width: 5px;
+  margin-top: 10px;
+}
+
+/* Track */
+.modalContainer::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 20px;
+}
+
+/* Handle */
+.modalContainer::-webkit-scrollbar-thumb {
+  background: #acaaaa;
+  border-radius: 20px;
+}
+
+/* Handle on hover */
+.modalContainer::-webkit-scrollbar-thumb:hover {
+  background: #6e6e6e;
+}
