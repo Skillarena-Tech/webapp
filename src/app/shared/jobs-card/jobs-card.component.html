@@ -1,4 +1,4 @@
-<div class="card shadow " style="flex-basis: 33%;">
+<div class="card shadow " [ngClass]="{'black-bg-color':theme==='dark_theme'}" style="flex-basis: 33%">
   <div class="card-body w-100">
     <div class="card-title d-flex align-items-center gap-2">
       <div id="logo">
@@ -9,13 +9,21 @@
           alt=""
         />
       </div>
-      <div class="fw-bold fs-5">Salesforce Developer</div>
+      <div
+        class="fw-bold fs-5 element-font-family"
+        [ngClass]="{ 'text-white': theme === 'dark_theme' }"
+      >
+        Salesforce Developer
+      </div>
     </div>
-    <div class="card-text my-4 w-100">
+    <div
+      class="card-text my-4 w-100 element-font-family"
+      [ngClass]="{ 'time-white': theme === 'dark_theme' }"
+    >
       Some quick example text ...
       <div class="mt-4 ms-2 d-flex gap-3">
         <div class="badge badge-secondary d-flex align-items-center gap-2">
-          <div class="material-icons-outlined">calendar_month</div>
+          <div class="material-icons-outlined text-white">calendar_month</div>
           <div class="text-normal">Full-time</div>
         </div>
         <div class="badge badge-secondary d-flex align-items-center gap-2">

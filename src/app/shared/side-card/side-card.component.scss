@@ -1,9 +1,22 @@
 .bg-black-color {
-  background: rgba(27, 26, 26, 0.55);
-  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-  backdrop-filter: blur(17.5px);
-  -webkit-backdrop-filter: blur(17.5px);
-  border-radius: 10px;
-  border: 1px solid rgba(255, 255, 255, 0.18);
+  background: radial-gradient(
+        100% 100% at 50.12% 0%,
+        rgba(33, 39, 52, 0.7) 0%,
+        rgba(0, 0, 0, 0.4) 100%
+      )
+      /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */,
+    linear-gradient(
+      125.12deg,
+      rgba(255, 255, 255, 0.1) 2.83%,
+      rgba(255, 255, 255, 0) 100%
+    );
+  border: 1px solid;
+
+  border-image-source: linear-gradient(
+    125.12deg,
+    rgba(255, 255, 255, 0.1) 2.83%,
+    rgba(255, 255, 255, 0) 100%
+  );
+
   color: white;
 }
