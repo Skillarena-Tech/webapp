@@ -353,3 +353,27 @@ $navbarHeight: var(--navbarHeight);
 }
 
 
+.map-container {
+  height: calc(100vh - var(--navbarHeight) - 140px);
+}
+.map-container {
+  #map-container {
+    .gm-control-active.gm-fullscreen-control {
+      // top: 45px !important;
+      display: none;
+    }
+
+    .gmnoprint.gm-bundled-control.gm-bundled-control-on-bottom {
+      display: none;
+    }
+  }
+
+  .gmnoprint .gm-style-cc,
+  .gmnoprint.gm-style-cc {
+    display: none;
+  }
+
+  a[title="Open this area in Google Maps (opens a new window)"] {
+    visibility: hidden;
+  }
+}
