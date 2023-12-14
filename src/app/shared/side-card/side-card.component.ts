@@ -14,6 +14,7 @@ export class SideCardComponent implements OnInit {
   public theme: any;
 
   constructor(private localStorageService: LocalStorageService) {
+    this.theme = this.localStorageService.getLocalStorageValue();
     this.localStorageService.getLocalStorageChanges().subscribe((value) => {
       this.theme = value;
       });
