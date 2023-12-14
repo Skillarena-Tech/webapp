@@ -1,9 +1,50 @@
 <div class="main-playground">
-    <div class="home-content d-flex gap-5" [ngStyle]="{
+  <div
+    class="home-content d-flex gap-5"
+    [ngStyle]="{
       'margin-left': hideSideBar ? '4rem' : '11rem'
-    }">
-    <div class="col-8 h-100" style="background-color: black;">
-        gfgf
+    }"
+  >
+    <div class="col-8 h-100 w-100">
+      <div
+        class="container me-5 ps-2 mt-3 d-flex justify-content-between align-items-center"
+      >
+        <div>
+          <div class="ms-3">
+            <span class="display-6 fw-bold element-font-family"
+              >Jobs for you</span
+            >
+            <div class="d-flex gap-2">
+              <button>Jobs</button>
+              <button>Maps</button>
+            </div>
+          </div>
+        </div>
+        <div><button class="btn btn-success">Filter</button></div>
+      </div>
+      <div class="container d-flex gap-2 mt-3" style="flex-wrap: wrap">
+        <div>
+          <sa-jobs-card></sa-jobs-card>
+        </div>
+        <div>
+          <sa-jobs-card></sa-jobs-card>
+        </div>
+        <div>
+          <sa-jobs-card></sa-jobs-card>
+        </div>
+        <div>
+          <sa-jobs-card></sa-jobs-card>
+        </div>
+        <div>
+          <sa-jobs-card></sa-jobs-card>
+        </div>
+        <div>
+          <sa-jobs-card></sa-jobs-card>
+        </div>
+        <div>
+          <sa-jobs-card></sa-jobs-card>
+        </div>
+      </div>
     </div>
-    </div>
+  </div>
 </div>

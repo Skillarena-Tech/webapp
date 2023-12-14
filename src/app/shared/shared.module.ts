@@ -10,6 +10,7 @@ import { LoginModalComponent } from './login-modal/login-modal.component';
 import { LoginFormComponent } from './login-form/login-form.component';
 import { SignUpFormComponent } from './sign-up-form/sign-up-form.component';
 import { MapsComponent } from './maps/maps.component';
+import { JobsCardComponent } from './jobs-card/jobs-card.component';
 
 @NgModule({
   declarations: [
@@ -21,6 +22,7 @@ import { MapsComponent } from './maps/maps.component';
     LoginFormComponent,
     SignUpFormComponent,
     MapsComponent,
+    JobsCardComponent,
   ],
   imports: [CommonModule, FormsModule, NgbModule],
   exports: [
@@ -28,6 +30,7 @@ import { MapsComponent } from './maps/maps.component';
     SideBarComponent,
     PostCardComponent,
     SideCardComponent,
+    JobsCardComponent,
   ],
 })
 export class SharedModule {
