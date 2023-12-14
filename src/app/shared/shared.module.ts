@@ -31,6 +31,7 @@ import { JobsCardComponent } from './jobs-card/jobs-card.component';
     PostCardComponent,
     SideCardComponent,
     JobsCardComponent,
+    MapsComponent
   ],
 })
 export class SharedModule {

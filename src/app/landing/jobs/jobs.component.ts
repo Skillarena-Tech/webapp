@@ -16,4 +16,17 @@ export class JobsComponent {
       this.theme = value;
     });
   }
+  public courseDetails: any = [{},{},{},{},{},{},{},{},{},{}];
+  public activepage: any = 'job-card';
+
+  changeActivepage(type: any) {
+    try {
+      if (this.activepage === type) {
+        return;
+      }
+      this.activepage = type;
+    } catch (typechangeErr) {
+      console.error(typechangeErr)
+    }
+  }
 }

@@ -15,35 +15,20 @@
               >Jobs for you</span
             >
             <div class="d-flex gap-2">
-              <button>Jobs</button>
-              <button>Maps</button>
+              <button (click)="changeActivepage('job-card')">Cards</button>
+              <button (click)="changeActivepage('map-view')">Maps</button>
             </div>
           </div>
         </div>
         <div><button class="btn btn-success">Filter</button></div>
       </div>
-      <div class="container d-flex gap-2 mt-3" style="flex-wrap: wrap">
-        <div>
+      <div class="container d-flex gap-2 mt-3" style="flex-wrap: wrap" *ngIf="activepage === 'job-card'">
+        <div *ngFor="let eachdet of courseDetails">
           <sa-jobs-card></sa-jobs-card>
         </div>
-        <div>
-          <sa-jobs-card></sa-jobs-card>
-        </div>
-        <div>
-          <sa-jobs-card></sa-jobs-card>
-        </div>
-        <div>
-          <sa-jobs-card></sa-jobs-card>
-        </div>
-        <div>
-          <sa-jobs-card></sa-jobs-card>
-        </div>
-        <div>
-          <sa-jobs-card></sa-jobs-card>
-        </div>
-        <div>
-          <sa-jobs-card></sa-jobs-card>
-        </div>
+      </div>
+      <div class="container map-container mt-3" *ngIf="activepage === 'map-view'">
+        <sa-maps></sa-maps>
       </div>
     </div>
   </div>
